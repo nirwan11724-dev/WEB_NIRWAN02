@@ -62,22 +62,15 @@
 
   function masukWebsite() {
     sessionStorage.setItem('sudahMasuk', 'true');
-    const welcome = document.getElementById('welcome-screen');
-    if(welcome){
-      welcome.style.opacity = '0';
-      setTimeout(() => welcome.style.display = 'none', 800);
-    }
-    if(musik){
-      musik.play().catch(()=>{});
-    }
+    document.getElementById('welcome-screen').style.display = 'none';
+    if(musik) musik.play().catch(()=>{});
   }
 
-  // Kalau sudah pernah masuk, langsung hilangin welcome screen
   if (sessionStorage.getItem('sudahMasuk')) {
     const ws = document.getElementById('welcome-screen');
     if(ws) ws.style.display = 'none';
   }
-</script>
+</script>>
 
 >
 </body>
