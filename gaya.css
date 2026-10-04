@@ -1,82 +1,88 @@
-/* ====== GLOBAL ====== */
+/* ===== WELCOME SCREEN ===== */
+#welcome-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: white;
+  text-align: center;
+  transition: opacity 0.8s ease;
+}
+.welcome-box h1 { font-size: 2.5em; animation: fadeIn 1s; }
+.welcome-box button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background: white;
+  color: #2575fc;
+  font-weight: bold;
+}
+
+/* ===== UMUM ===== */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-    color: #333;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f5f7fb;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
 }
+h1, h2 { color: #222; }
+a { text-decoration: none; }
 
-/* ====== HEADER ====== */
-header {
-    background: #4a90e2;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-header h1 {
-    margin: 0;
-    font-size: 32px;
-    letter-spacing: 2px;
-}
-
-/* ====== TULISAN ====== */
-h2 {
-    font-weight: normal;
-    font-size: 18px;
-    margin-left: 10px;
-}
-hr {
-    border: none;
-    border-top: 2px solid #ccc;
-    margin: 20px 0;
-}
-
-/* ====== NAV ====== */
-nav a {
-    text-decoration: none;
-    color: white;
-    background: #4a90e2;
-    padding: 8px 12px;
-    border-radius: 5px;
-    margin-right: 8px;
-}
-
-/* ====== GALLERY ====== */
+/* ===== FOTO & VIDEO ===== */
 img {
-    display: block;
-    margin: 10px auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 90%;
 }
-
-/* ====== VIDEO & AUDIO ====== */
 video {
-    display: block;
-    margin: 10px auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 100%;
 }
-audio {
-    display: block;
-    margin: 20px auto;
-}
-/* foto ====== foto ===== */
+audio { display: block; margin: 20px auto; }
+
+/* ===== HERO SECTION (ini yang hilang kemarin) ===== */
 .hero {
   display: flex;
   align-items: center;
   gap: 15px;
   margin: 20px 0;
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
-
-.hero-teks {
-  flex: 1;
-}
-
+.hero-teks { flex: 1; }
+.hero-teks h2 { font-size: 1.8em; line-height: 1.2em; margin: 0; }
 .hero-foto {
   width: 45%;
   border-radius: 15px;
-} /* <-- ini yang hilang kemarin */
+  object-fit: cover;
+}
+
+/* ===== TOMBOL ===== */
+.btn, button {
+  background: #2575fc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  border: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
