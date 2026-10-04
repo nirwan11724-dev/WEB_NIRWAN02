@@ -44,42 +44,42 @@
 <button id="btnMusik" style="position:fixed; bottom:15px; right:15px; padding:8px 12px; border-radius:20px; border:none; background:#222; color:white; cursor:pointer;">
   🔊 Nyalakan Musik
 </button>
-
 <script>
-  const musik = document.getElementById('backsound');
+  const musik = document.getElementById('bg-music');
   const btn = document.getElementById('btnMusik');
-  musik.volume = 0.3; // biar gak kenceng banget 30% aja
+  if(musik) musik.volume = 0.3;
 
-  btn.onclick = function() {
-    if (musik.paused) {
-      musik.play();
-      btn.innerHTML = "🔇 Matikan Musik";
-    } else {
-      musik.pause();
-      btn.innerHTML = "🔊 Nyalakan Musik";
-    </script>
-    
-<script>
-  if (sessionStorage.getItem('sudahMasuk')) {
-    document.getElementById('welcome-screen').style.display = 'none';
-    // Kalau sudah pernah masuk, langsung putar musik juga (pelan)
-    document.getElementById('bg-music').play().catch(()=>{});
+  if(btn && musik){
+    btn.onclick = function() {
+      if (musik.paused) {
+        musik.play();
+        btn.innerHTML = "🔇 Matikan Musik";
+      } else {
+        musik.pause();
+        btn.innerHTML = "🔊 Nyalakan Musik";
+      }
+    }
   }
 
   function masukWebsite() {
     sessionStorage.setItem('sudahMasuk', 'true');
-    
-    // INI KUNCINYA: Putar musik pas klik Masuk
-    const musik = document.getElementById('bg-music');
-    musik.volume = 0.4; // biar gak terlalu keras, 0.4 = 40%
-    musik.play();
+    const welcome = document.getElementById('welcome-screen');
+    if(welcome){
+      welcome.style.opacity = '0';
+      setTimeout(() => welcome.style.display = 'none', 800);
+    }
+    if(musik){
+      musik.play().catch(()=>{});
+    }
+  }
 
-    // Animasi tutup welcome
-    document.getElementById('welcome-screen').style.opacity = '0';
-    setTimeout(() => {
-      document.getElementById('welcome-screen').style.display = 'none';
-    }, 800);
+  // Kalau sudah pernah masuk, langsung hilangin welcome screen
+  if (sessionStorage.getItem('sudahMasuk')) {
+    const ws = document.getElementById('welcome-screen');
+    if(ws) ws.style.display = 'none';
   }
 </script>
+
+>
 </body>
 </html>
