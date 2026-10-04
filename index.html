@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELAJAR WEB</title>
+    <link rel="stylesheet" href="gaya.css">
+</head>
+<body>
+    <nav>
+        <a href="assets/Beranda/Beranda.html">About</a>
+        <a href="assets/Profil/profil.html">Profil</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+<!-- HALAMAN PEMBUKA -->
+<div id="welcome-screen">
+  <div class="welcome-box">
+    <h1>Selamat Datang! 👋</h1>
+    <p>Terima kasih sudah mampir ke website pribadi saya.</p>
+    <button onclick="masukWebsite()">Masuk Website →</button>
+    
+    <audio id="bg-music" loop>
+      <source src="assets/musik.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
+</div>
+  <div class="hero">
+  <div class="hero-teks">
+    <h1>halooo!! selamat datang di website pribadi nirwan :)</h1>
+  </div>
+  <img src="foto_halaman.jpg" class="hero-foto">
+</div>
+    <hr>
+    <h2>Video perkenalan:</h2>
+    <video width="360" height="240" controls>
+        <source src="assets/video1.mp4" type="video/mp4">
+    </video>
+    <!-- BACKSOUND -->
+<audio id="backsound" loop>
+  <source src="assets/musik.mp3" type="audio/mpeg">
+</audio>
+
+<button id="btnMusik" style="position:fixed; bottom:15px; right:15px; padding:8px 12px; border-radius:20px; border:none; background:#222; color:white; cursor:pointer;">
+  🔊 Nyalakan Musik
+</button>
+
+<script>
+  const musik = document.getElementById('backsound');
+  const btn = document.getElementById('btnMusik');
+  musik.volume = 0.3; // biar gak kenceng banget 30% aja
+
+  btn.onclick = function() {
+    if (musik.paused) {
+      musik.play();
+      btn.innerHTML = "🔇 Matikan Musik";
+    } else {
+      musik.pause();
+      btn.innerHTML = "🔊 Nyalakan Musik";
+    </script>
+    
+<script>
+  if (sessionStorage.getItem('sudahMasuk')) {
+    document.getElementById('welcome-screen').style.display = 'none';
+    // Kalau sudah pernah masuk, langsung putar musik juga (pelan)
+    document.getElementById('bg-music').play().catch(()=>{});
+  }
+
+  function masukWebsite() {
+    sessionStorage.setItem('sudahMasuk', 'true');
+    
+    // INI KUNCINYA: Putar musik pas klik Masuk
+    const musik = document.getElementById('bg-music');
+    musik.volume = 0.4; // biar gak terlalu keras, 0.4 = 40%
+    musik.play();
+
+    // Animasi tutup welcome
+    document.getElementById('welcome-screen').style.opacity = '0';
+    setTimeout(() => {
+      document.getElementById('welcome-screen').style.display = 'none';
+    }, 800);
+  }
+</script>
+</body>
+</html>
