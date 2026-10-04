@@ -1,0 +1,82 @@
+/* ====== GLOBAL ====== */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* ====== HEADER ====== */
+header {
+    background: #4a90e2;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+/* ====== TULISAN ====== */
+h2 {
+    font-weight: normal;
+    font-size: 18px;
+    margin-left: 10px;
+}
+hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+}
+
+/* ====== NAV ====== */
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #4a90e2;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-right: 8px;
+}
+
+/* ====== GALLERY ====== */
+img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    max-width: 90%;
+}
+
+/* ====== VIDEO & AUDIO ====== */
+video {
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+audio {
+    display: block;
+    margin: 20px auto;
+}
+/* foto ====== foto ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.hero-teks {
+  flex: 1;
+}
+
+.hero-foto {
+  width: 45%;
+  border-radius: 15px;
+} /* <-- ini yang hilang kemarin */
